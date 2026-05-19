@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 考试倒计时</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 动态背景 -->
+    <div class="background">
+        <div class="gradient-bg"></div>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- 主内容 -->
+    <div class="container">
+        <header>
+            <h1 class="title">🎓 考试倒计时</h1>
+            <p class="subtitle">距离你的下一场考试还有...</p>
+        </header>
+
+        <!-- 倒计时显示区域 -->
+        <div class="countdown-section" id="countdownSection">
+            <div class="countdown-empty" id="countdownEmpty">
+                <div class="empty-icon">📝</div>
+                <p>还没有添加考试</p>
+                <p class="empty-hint">点击下方按钮添加你的考试吧！</p>
+            </div>
+            
+            <div class="countdown-display" id="countdownDisplay" style="display: none;">
+                <div class="exam-name" id="examName"></div>
+                <div class="countdown-grid">
+                    <div class="time-block">
+                        <div class="time-value" id="days">00</div>
+                        <div class="time-label">天</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-block">
+                        <div class="time-value" id="hours">00</div>
+                        <div class="time-label">时</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-block">
+                        <div class="time-value" id="minutes">00</div>
+                        <div class="time-label">分</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-block">
+                        <div class="time-value" id="seconds">00</div>
+                        <div class="time-label">秒</div>
+                    </div>
+                </div>
+                <div class="exam-date" id="examDate"></div>
+            </div>
+        </div>
+
+        <!-- 考试列表 -->
+        <div class="exams-section">
+            <h2>📋 我的考试</h2>
+            <div class="exams-list" id="examsList">
+                <div class="no-exams">暂无考试记录</div>
+            </div>
+        </div>
+
+        <!-- 添加考试弹窗 -->
+        <button class="add-btn" id="addBtn">+ 添加考试</button>
+        
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeBtn">&times;</span>
+                <h3>添加新考试</h3>
+                <form id="examForm">
+                    <div class="form-group">
+                        <label>考试名称</label>
+                        <input type="text" id="examNameInput" required placeholder="如：期末考试">
+                    </div>
+                    <div class="form-group">
+                        <label>考试日期</label>
+                        <input type="date" id="examDateInput" required>
+                    </div>
+                    <div class="form-group">
+                        <label>考试时间</label>
+                        <input type="time" id="examTimeInput" required>
+                    </div>
+                    <button type="submit" class="submit-btn">确认添加</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
